@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { IconService } from './icon.service';
 import { ElementBeach } from './model/element-beach.model';
 
 @Component({
@@ -22,8 +23,12 @@ export class AppComponent implements OnInit {
   ];
   statusName='';
   isEmpty:boolean;
+  iconName:string = "-";
+
+  constructor(private iconService:IconService) {}
 
   ngOnInit() {
+    this.getIconName();
   }
 
   getColor(status:number) {
@@ -45,6 +50,10 @@ export class AppComponent implements OnInit {
 
   onSelectElementBeach(id:number) {
     console.log(`Hai cliccato sull'elemento con id: ${id}`);
+  }
+
+  getIconName() {
+    this.iconName = this.iconService.getIcon(0, 0);
   }
 
    /**
