@@ -2,21 +2,23 @@
   <div class="row">
     <div class="col-sm-12">
       <h1>Grid Test</h1>
-      <img src="./assets/icon/cabina-prenotata.png">
     </div>
   </div>
   <div class="row">
     <div class="col-sm-12">
       <mat-grid-list cols="10" gutterSize="1">
-        <mat-grid-tile 
+        <mat-grid-tile class="tile"
           *ngFor="let element of elementsBeach"
-          [style.background-color]="getColor(element.status)">
+          (click)="onSelectElementBeach(element.id)"
+          style="cursor: pointer;">
             <div *ngIf="!element.isEmpty">
-              <button (click)="onSelectElementBeach(element.id)">{{ element.name }} {{ element.id }}</button> {{ statusName }}
+              <div *ngIf="element.status != -1" class="center-text">
+                <h6>{{ element.id }}</h6>
+              </div>
+              <img [src]="getIcon(element.status, element.type)">
             </div>
         </mat-grid-tile>
       </mat-grid-list>
     </div>
   </div>
 </div>
-<p>{{ iconName }}</p>

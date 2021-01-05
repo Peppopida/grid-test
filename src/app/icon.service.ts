@@ -5,8 +5,17 @@ import { stat } from 'fs';
   providedIn: 'root'
 })
 export class IconService {
-  getIcon(status, type):string {
-    if(status == 0) {
+  getIcon(status:number, type:number):string {
+    if(status == -1) {
+      switch(type) {
+        case 0:
+          return "./assets/icon/error.jpg";
+        case 1:
+          return "./assets/icon/error.jpg";
+        case 2:
+           return "./assets/icon/error.jpg";
+      }
+    }else if(status == 0) {
       switch(type) {
         case 0:
           return "./assets/icon/ombrellone-free.png";

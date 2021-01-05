@@ -1,0 +1,10 @@
+.tile {
+  text-align: center;
+  border: 1px solid rgb(200, 200, 200);
+}
+
+.center-text {
+  position: absolute;
+  top: 28px;
+  right: 37px;
+}

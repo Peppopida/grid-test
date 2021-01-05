@@ -17,19 +17,14 @@ export class AppComponent implements OnInit {
     {id:4, name:'Ombrellone', status:2, type:2, section:2, isEmpty:false},
     {section:1, isEmpty:true},
     {id:50, name:'Cabina', status:2, type:1, section:2, isEmpty:false},
-    {id:62, name:'Sdraio', status:2, type:3, section:4, isEmpty:false},
-    {section:2, isEmpty:true},
-    {id:624, name:'Lettone', status:0, type:4, section:2, isEmpty:false}
+    {section:2, isEmpty:true}
   ];
   statusName='';
   isEmpty:boolean;
-  iconName:string = "-";
 
   constructor(private iconService:IconService) {}
 
-  ngOnInit() {
-    this.getIconName();
-  }
+  ngOnInit() {}
 
   getColor(status:number) {
     switch(status) {
@@ -48,12 +43,12 @@ export class AppComponent implements OnInit {
     }
   }
 
-  onSelectElementBeach(id:number) {
-    console.log(`Hai cliccato sull'elemento con id: ${id}`);
+  getIcon(status:number, type:number):string {
+    return this.iconService.getIcon(status, type);
   }
 
-  getIconName() {
-    this.iconName = this.iconService.getIcon(0, 0);
+  onSelectElementBeach(id:number) {
+    console.log(`Hai cliccato sull'elemento con id: ${id}`);
   }
 
    /**
