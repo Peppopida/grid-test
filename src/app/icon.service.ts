@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { stat } from 'fs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,15 +9,29 @@ export class IconService {
     if(status == 0) {
       switch(type) {
         case 0:
-          return "./assets/icon/ombrellone-libero.png";
+          return "./assets/icon/ombrellone-free.png";
         case 1:
-          return "./assets/icon/cabina-libera.png";
+          return "./assets/icon/cabina-free.png";
         case 2:
-           return "./assets/icon/spogliatoio-libero.png";
+           return "./assets/icon/spogliatoio-free.png";
       }
     }else if(status == 1) {
       switch(type) {
-        
+        case 0:
+          return "./assets/icon/ombrellone-busy.png";
+        case 1:
+          return "./assets/icon/cabina-busy.png";
+        case 2:
+           return "./assets/icon/spogliatoio-busy.png";
+      }
+    }else if(status == 2) {
+      switch(type) {
+        case 0:
+          return "./assets/icon/ombrellone-reserved.png";
+        case 1:
+          return "./assets/icon/cabina-reserved.png";
+        case 2:
+           return "./assets/icon/spogliatoio-reserved.png";
       }
     }
   }
