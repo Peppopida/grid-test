@@ -8,11 +8,11 @@ export class IconService {
     if(status == 0) {
       switch(type) {
         case 0:
-          return "./assets/icon/ombrellone-prenotato.png";
+          return "./assets/icon/ombrellone-libero.png";
         case 1:
-          return "./assets/icon/cabina-prenotata.png";
+          return "./assets/icon/cabina-libera.png";
         case 2:
-           return "./assets/icon/spogliatoio-prenotato.png";
+           return "./assets/icon/spogliatoio-libero.png";
       }
     }else if(status == 1) {
       switch(type) {
