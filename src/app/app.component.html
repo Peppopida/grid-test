@@ -12,10 +12,10 @@
           (click)="onSelectElementBeach(element.id)"
           style="cursor: pointer;">
             <div *ngIf="!element.isEmpty">
+              <img class="center-icon" [src]="getIcon(element.status, element.type)">
               <div *ngIf="element.status != -1" class="center-text">
                 <h6>{{ element.id }}</h6>
               </div>
-              <img [src]="getIcon(element.status, element.type)">
             </div>
         </mat-grid-tile>
       </mat-grid-list>
