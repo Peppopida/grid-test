@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { IconService } from './icon.service';
 import { ElementBeach } from './model/element-beach.model';
+import { ElementCoord } from './model/element-coord.model';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ import { ElementBeach } from './model/element-beach.model';
 })
 export class AppComponent implements OnInit {
   elementsBeach:ElementBeach[] = [
-    {id:10, name:'Cabina', status:-1, type:1, section:0, isEmpty:false},
+    {id:10, name:'Cabina', status:1, type:1, section:0, isEmpty:false},
     {section:0, isEmpty:true},
     {id:13, name:'Cabina', status:0, type:1, section:0, isEmpty:false},
     {id:2, name:'Ombrellone', status:1, type:2, section:1, isEmpty:false},
@@ -19,6 +20,14 @@ export class AppComponent implements OnInit {
     {id:50, name:'Cabina', status:2, type:1, section:2, isEmpty:false},
     {section:2, isEmpty:true}
   ];
+  elementCoord:ElementCoord[] = [
+    {id: 56, isFree: true, section: 0, coordX: 0, coordY: 0},
+    {id: 4, isFree: false, section: 0, coordX: 80, coordY: 80},
+    {id: 17, isFree: true, section: 0, coordX: 160, coordY: 160},
+    {id: 90, isFree: false, section: 0, coordX: 0, coordY: 240}
+  ];
+  pathElementFree = "./assets/icon/ombrellone-reserved.png";
+  pathElementBusy = "./assets/icon/ombrellone-busy.png";
   statusName='';
   isEmpty:boolean;
 
