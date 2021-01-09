@@ -1,4 +1,5 @@
 <div class="container">
+  <!--
   <div class="row">
     <div class="col-sm-12">
       <h2>Grid test con matrice</h2>
@@ -20,10 +21,10 @@
         </mat-grid-tile>
       </mat-grid-list>
     </div>
-  </div>
+  </div>-->
   <div class="row">
     <div class="col-sm-12">
-      <h2>Grid test con coordinate</h2>
+      <h2>Map test</h2>
     </div>
   </div>
   <div class="row">
@@ -32,7 +33,7 @@
         <div *ngFor="let element of elementCoord" (click)="onSelectElementBeach(element.id)" style="cursor: pointer;">
           <div class="child" [ngStyle]="{'top': element.coordY+'px', 'left': element.coordX+'px' }">
             <img class="center-icon" [src]="element.isFree ? pathElementFree : pathElementBusy">
-            <h6 class="align-center">{{ element.id }}</h6>
+            <!--<h6 class="align-center">{{ element.id }}</h6>-->
           </div>
         </div>
       </div>

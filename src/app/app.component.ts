@@ -24,10 +24,11 @@ export class AppComponent implements OnInit {
     {id: 56, isFree: true, section: 0, coordX: 0, coordY: 0},
     {id: 4, isFree: false, section: 0, coordX: 80, coordY: 80},
     {id: 17, isFree: true, section: 0, coordX: 160, coordY: 160},
-    {id: 90, isFree: false, section: 0, coordX: 0, coordY: 240}
+    {id: 90, isFree: false, section: 0, coordX: 0, coordY: 240},
+    {id: 89, isFree: true, section:0, coordX: 80, coordY: 0}
   ];
-  pathElementFree = "./assets/icon/ombrellone-reserved.png";
-  pathElementBusy = "./assets/icon/ombrellone-busy.png";
+  pathElementFree = "./assets/icon/element-beach-free.png";
+  pathElementBusy = "./assets/icon/element-beach-busy.png";
   statusName='';
   isEmpty:boolean;
 
