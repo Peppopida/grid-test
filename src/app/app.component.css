@@ -5,6 +5,8 @@
 }
 .center-icon {
   position: relative;
+  width: 40px;
+  height: 40px;
 }
 .center-text {
   position: absolute;
@@ -18,9 +20,16 @@
 }
 .child {
   position: absolute;
-  border-style: solid;
-  border-color: rgb(200, 200, 200);
-  border-width: 1px;
+}
+.cursor {
+  cursor: pointer;
+}
+.circle-select {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(64, 168, 130, 0.5);
+  border-radius: 50%;
 }
 /*
 .align-center {
