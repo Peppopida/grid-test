@@ -30,9 +30,13 @@
   <div class="row">
     <div class="col-sm-12">
       <div class="wrap">
-        <div *ngFor="let element of elementCoord" (click)="onSelectElementBeach(element.id)" style="cursor: pointer;">
+        <div
+          *ngFor="let element of elementCoord"
+          (click)="onSelectElementBeach(element.id, element.isFree)"
+          [ngClass]="{'cursor' : element.isFree}">
           <div class="child" [ngStyle]="{'top': element.coordY+'px', 'left': element.coordX+'px' }">
             <img class="center-icon" [src]="element.isFree ? pathElementFree : pathElementBusy">
+            <span class="circle-select"></span>
             <!--<h6 class="align-center">{{ element.id }}</h6>-->
           </div>
         </div>
