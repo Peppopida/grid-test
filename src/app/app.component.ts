@@ -45,23 +45,20 @@ export class AppComponent implements OnInit {
     elementSelected.isSelect = !elementSelected.isSelect;
     if(elementSelected.isFree) {
       if(elementSelected.isSelect) {
-        console.log(`id: ${elementSelected.id}`);
+        //add item to list of selected
         this.elementsBeachSelected.push(elementSelected);
       }else{
-        //eliminare dalla lista dei selezionati la postazione deselezionata
-        console.log(`id: ${elementSelected.id} eliminata!`);
-        
+        //remove item to list of selected
+        this.removeDeselectedElement(this.elementsBeachSelected, elementSelected);
       }
     }
+    console.log(`Array dei selezionati: ${JSON.stringify(this.elementsBeachSelected)}`);
   }
 
-  /* removeDeselectedElement(id) {
-    for(let i=0 ; i<this.elementsBeachSelected.length ; i++) {
-      const num = this.elementsBeachSelected[i].id;
-      if(num % 2 === 0) {
-        this.elementsBeachSelected.splice(i, 1);
-      }
+  removeDeselectedElement(arraySelected:ElementCoord[], elementSelected:ElementCoord) {
+    const index:number = arraySelected.indexOf(elementSelected);
+    if(index !== -1) {
+      arraySelected.splice(index, 1);
     }
-    console.log(`Selezionati: ${JSON.stringify(this.elementsBeachSelected)}`);
-  } */
+  }
 }
