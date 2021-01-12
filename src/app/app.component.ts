@@ -32,7 +32,6 @@ export class AppComponent implements OnInit {
   pathElementBusy = "./assets/icon/element-beach-busy.png";
   statusName='';
   isEmpty:boolean;
-  isSelected = false;
 
   constructor(private iconService:IconService) {}
 
@@ -43,27 +42,12 @@ export class AppComponent implements OnInit {
   }
 
   onSelectElementBeach(elementSelected:ElementCoord) {
-    this.isSelected = !this.isSelected;
+    elementSelected.isSelect = !elementSelected.isSelect;
     if(elementSelected.isFree) {
-      if(this.isSelected) {
-        for(let i=0 ; i<this.elementsBeachSelected.length ; i++) {
-          if(elementSelected.id === this.elementsBeachSelected[i].id) {
-            this.elementsBeachSelected.push(elementSelected);
-          }else{
-            console.log(`presente in array di selezionati: ${elementSelected.id}`);
-          }
-        }
-      }else{
-        
+      if(elementSelected.isSelect) {
+
       }
-      
-      /* if(this.isSelected) {
-        this.elementsBeachSelected.push(elementSelected);
-        console.log(`Hai cliccato sull'elemento con id: ${elementSelected.id}`);
-      }else{
-        //this.removeDeselectedElement(elementSelected.id);
-      } */
-      console.log(`array selezionati: ${JSON.stringify(this.elementsBeachSelected)}`);
+      console.log(`id: ${elementSelected.id}`);
     }
   }
 

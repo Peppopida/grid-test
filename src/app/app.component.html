@@ -35,13 +35,9 @@
           (click)="onSelectElementBeach(element)"
           [ngClass]="{'cursor' : element.isFree}">
           <div class="child" [ngStyle]="{'top': element.coordY+'px', 'left': element.coordX+'px' }">
-            <div *ngFor="let elementSelected of elementsBeachSelected">
-              <div *ngIf="element.id === elementSelected.id">
-                <span class="circle-select"></span>
-              </div>
-            </div>
+            <span class="circle-select" *ngIf="element.isSelect && element.isFree"></span>
             <img class="center-icon" [src]="element.isFree ? pathElementFree : pathElementBusy">
-            <!--<h6 class="align-center">{{ element.id }}</h6>-->
+            <!-- <h6 class="align-center">{{ element.id }}</h6> -->
           </div>
         </div>
       </div>

@@ -4,4 +4,5 @@ export class ElementCoord {
   section:number;
   coordX:number;
   coordY:number;
+  isSelect?:boolean = false;
 }
