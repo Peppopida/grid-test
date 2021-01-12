@@ -45,9 +45,13 @@ export class AppComponent implements OnInit {
     elementSelected.isSelect = !elementSelected.isSelect;
     if(elementSelected.isFree) {
       if(elementSelected.isSelect) {
-
+        console.log(`id: ${elementSelected.id}`);
+        this.elementsBeachSelected.push(elementSelected);
+      }else{
+        //eliminare dalla lista dei selezionati la postazione deselezionata
+        console.log(`id: ${elementSelected.id} eliminata!`);
+        
       }
-      console.log(`id: ${elementSelected.id}`);
     }
   }
 
