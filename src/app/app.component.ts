@@ -27,10 +27,12 @@ export class AppComponent implements OnInit {
     {id: 90, isFree: false, section: 0, coordX: 0, coordY: 80},
     {id: 89, isFree: true, section:0, coordX: 40, coordY: 0}
   ];
+  elementsBeachSelected:ElementCoord[] = [];
   pathElementFree = "./assets/icon/element-beach-free.png";
   pathElementBusy = "./assets/icon/element-beach-busy.png";
   statusName='';
   isEmpty:boolean;
+  isSelected = false;
 
   constructor(private iconService:IconService) {}
 
@@ -40,9 +42,38 @@ export class AppComponent implements OnInit {
     return this.iconService.getIcon(status, type);
   }
 
-  onSelectElementBeach(id:number, isFree:boolean) {
-    if(isFree){
-      console.log(`Hai cliccato sull'elemento con id: ${id}`);
+  onSelectElementBeach(elementSelected:ElementCoord) {
+    this.isSelected = !this.isSelected;
+    if(elementSelected.isFree) {
+      if(this.isSelected) {
+        for(let i=0 ; i<this.elementsBeachSelected.length ; i++) {
+          if(elementSelected.id === this.elementsBeachSelected[i].id) {
+            this.elementsBeachSelected.push(elementSelected);
+          }else{
+            console.log(`presente in array di selezionati: ${elementSelected.id}`);
+          }
+        }
+      }else{
+        
+      }
+      
+      /* if(this.isSelected) {
+        this.elementsBeachSelected.push(elementSelected);
+        console.log(`Hai cliccato sull'elemento con id: ${elementSelected.id}`);
+      }else{
+        //this.removeDeselectedElement(elementSelected.id);
+      } */
+      console.log(`array selezionati: ${JSON.stringify(this.elementsBeachSelected)}`);
     }
   }
+
+  /* removeDeselectedElement(id) {
+    for(let i=0 ; i<this.elementsBeachSelected.length ; i++) {
+      const num = this.elementsBeachSelected[i].id;
+      if(num % 2 === 0) {
+        this.elementsBeachSelected.splice(i, 1);
+      }
+    }
+    console.log(`Selezionati: ${JSON.stringify(this.elementsBeachSelected)}`);
+  } */
 }

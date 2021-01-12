@@ -30,6 +30,7 @@
   width: 40px;
   background-color: rgba(64, 168, 130, 0.5);
   border-radius: 50%;
+  z-index: 1;
 }
 /*
 .align-center {
