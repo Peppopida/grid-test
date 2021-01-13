@@ -20,8 +20,8 @@ export class AppComponent implements OnInit {
     {id:50, name:'Cabina', status:2, type:1, section:2, isEmpty:false},
     {section:2, isEmpty:true}
   ];
-  elementCoord:ElementCoord[] = [
-    {id: 56, isFree: true, section: 0, coordX: 0, coordY: 0},
+  elementsCoord:ElementCoord[] = [
+    {id: 56, isFree: false, section: 0, coordX: 0, coordY: 0},
     {id: 4, isFree: false, section: 0, coordX: 40, coordY: 40},
     {id: 17, isFree: true, section: 0, coordX: 80, coordY: 80},
     {id: 90, isFree: false, section: 0, coordX: 0, coordY: 80},
@@ -51,14 +51,28 @@ export class AppComponent implements OnInit {
         //remove item to list of selected
         this.removeDeselectedElement(this.elementsBeachSelected, elementSelected);
       }
+      console.log(`Array dei selezionati: ${JSON.stringify(this.elementsBeachSelected)}`);
     }
-    console.log(`Array dei selezionati: ${JSON.stringify(this.elementsBeachSelected)}`);
   }
 
   removeDeselectedElement(arraySelected:ElementCoord[], elementSelected:ElementCoord) {
     const index:number = arraySelected.indexOf(elementSelected);
     if(index !== -1) {
       arraySelected.splice(index, 1);
+    }
+  }
+
+  aggiungiPostazione() {
+    let postazione:ElementCoord = {id: 71, isFree: true, section:0, coordX: 0, coordY: 120};
+    this.elementsCoord.push(postazione);
+  }
+
+  modificaPostazione() {
+    let idModify = 56;
+    let item:ElementCoord = this.elementsCoord.find(i => i.id === idModify);
+    var index = this.elementsCoord.indexOf(item);
+    if(index !== -1) {
+      this.elementsCoord[index] = {id: 56, isFree: true, section: 0, coordX: 0, coordY: 0}
     }
   }
 }

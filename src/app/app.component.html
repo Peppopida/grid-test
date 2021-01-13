@@ -1,3 +1,5 @@
+<button class="btn btn-success" (click)="aggiungiPostazione()">Aggiungi</button> | 
+<button class="btn btn-primary" (click)="modificaPostazione()">Modifica</button>
 <div class="container">
   <!--
   <div class="row">
@@ -31,7 +33,7 @@
     <div class="col-sm-12">
       <div class="wrap">
         <div
-          *ngFor="let element of elementCoord"
+          *ngFor="let element of elementsCoord"
           (click)="onSelectElementBeach(element)"
           [ngClass]="{'cursor' : element.isFree}">
           <div class="child" [ngStyle]="{'top': element.coordY+'px', 'left': element.coordX+'px' }">
